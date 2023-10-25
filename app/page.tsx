@@ -9,7 +9,6 @@ export default function Home() {
   const count = useSelector((state: RootState) => state.counter.value);
   const boolValue = useSelector((state: RootState) => state.bool.value);
   const dispatch = useDispatch();
-  // comment
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-2 py-5">
