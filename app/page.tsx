@@ -2,7 +2,7 @@
 
 import type { RootState } from "./store/store";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "./store/slice";
+import { decrement, increment, reset } from "./store/slice";
 import { change } from "./store/booleanSlice";
 
 export default function Home() {
@@ -15,16 +15,25 @@ export default function Home() {
       <div className="flex items-center justify-center gap-2">
         <button
           className="rounded-lg border border-black px-8 py-1 hover:border-white hover:bg-black/40 hover:text-white"
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(decrement())}
         >
-          Increment
+          Decrement
         </button>
         <span className="">{count}</span>
         <button
           className="rounded-lg border border-black px-8 py-1 hover:border-white hover:bg-black/40 hover:text-white"
-          onClick={() => dispatch(decrement())}
+          onClick={() => dispatch(increment())}
         >
-          Decrement
+          Increment
+        </button>
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-2">
+        <button
+          className="rounded-lg border border-black px-8 py-1 hover:border-white hover:bg-black/40 hover:text-white"
+          onClick={() => dispatch(reset())}
+        >
+          Reset Increment
         </button>
       </div>
 
@@ -33,12 +42,12 @@ export default function Home() {
           className="rounded-lg border border-black px-8 py-1 hover:border-white hover:bg-black/40 hover:text-white"
           onClick={() => dispatch(change())}
         >
-          change value
+          Popup
         </button>
 
-        <p className="text-black">
+        {/* <p className="text-black">
           boolean value : {boolValue ? "true" : "false"}
-        </p>
+        </p> */}
       </div>
 
       {boolValue ? (
