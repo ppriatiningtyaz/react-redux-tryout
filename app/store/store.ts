@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slice";
-import booleanSlice from "./booleanSlice";
+import counterReducer from "./numberReducer";
+import booleanSlice from "./booleanReducer";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    bool: booleanSlice
+    bool: booleanSlice,
   },
 });
 

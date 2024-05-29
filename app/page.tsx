@@ -2,8 +2,8 @@
 
 import type { RootState } from "./store/store";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, reset } from "./store/slice";
-import { change } from "./store/booleanSlice";
+import { decrement, increment, reset } from "./store/numberReducer";
+import { change } from "./store/booleanReducer";
 
 export default function Home() {
   const count = useSelector((state: RootState) => state.counter.value);
